@@ -1,0 +1,6 @@
+---
+title: "About"
+---
+I was born and raised in Hong Kong. Studied in the Hong Kong Polytechnic University with major in geomatics, I am keen on developing and investigating several aspects related to machine learning and data science, including quantitative finance and geospatial analytics. This is the reason why I would like to chase my master's degree in data science in UBC and I am so glad to join this giant family. Regarding outside of data science, I love playing several sports such as tennis, basketball etc.
+
+About this site
