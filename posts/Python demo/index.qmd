@@ -1,0 +1,18 @@
+---
+title: "Python"
+---
+
+
+
+This post demonstrate how python works on quadro.
+
+```{r}
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Example code
+data = {'x': [1, 2, 3, 4], 'y': [10, 20, 25, 30]}
+df = pd.DataFrame(data)
+print(df)
+```
