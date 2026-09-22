@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "posts/R demo/index.html",
+    "href": "posts/R demo/index.html",
+    "title": "Isaac Wu’s Personal Web",
+    "section": "",
+    "text": "I’m from Hong Kong and I studied my BSc in Geomatics at the Hong Kong Polytechnic Uiversity. After graduating, I worked in civil engineering for 2 years and then move to greater Vancouver. After that I have been working in a Land Surveying & Civil Engineering Firm for another 2 years. However I truly love Data Science and Artificial Intelligence. Not only I did a thesis in applying deep learning in remote sensing to analyze the aftermaths of wars but also had a lot of side projects ranging to spatial data science to algorithmic trading. Though this program, I hope I can advance my skills in data engineering and also the algorithms in ML. I hope I could be a Data Scientist / MLE in the future!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
     "objectID": "posts/first-weeks/index.html",
     "href": "posts/first-weeks/index.html",
     "title": "My first weeks in MDS",
@@ -11,7 +18,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Python\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsaac Wu’s Personal Web\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\nIsaac Wu\n\n\n\n\n\nNo matching items"
+    "text": "Python Demo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsaac Wu’s Personal Web\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\nIsaac Wu\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -30,15 +37,15 @@
   {
     "objectID": "posts/Python demo/index.html",
     "href": "posts/Python demo/index.html",
-    "title": "Python",
+    "title": "Python Demo",
     "section": "",
-    "text": "This post demonstrate how python works on quadro."
+    "text": "title: “Python Demo” jupyter: python3 —\nThis post demonstrates how Python code runs in Quarto.\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y, color='blue', label='Sin(x)')\nplt.title(\"Simple Sine Wave\")\nplt.xlabel(\"X\")\nplt.ylabel(\"Y\")\nplt.legend()\nplt.show()\n\n\n\n\n\n\n\n\n\nThis post demonstrate how python works on quadro."
   },
   {
-    "objectID": "posts/R demo/index.html",
-    "href": "posts/R demo/index.html",
-    "title": "Isaac Wu’s Personal Web",
-    "section": "",
-    "text": "I’m from Hong Kong and I studied my BSc in Geomatics at the Hong Kong Polytechnic Uiversity. After graduating, I worked in civil engineering for 2 years and then move to greater Vancouver. After that I have been working in a Land Surveying & Civil Engineering Firm for another 2 years. However I truly love Data Science and Artificial Intelligence. Not only I did a thesis in applying deep learning in remote sensing to analyze the aftermaths of wars but also had a lot of side projects ranging to spatial data science to algorithmic trading. Though this program, I hope I can advance my skills in data engineering and also the algorithms in ML. I hope I could be a Data Scientist / MLE in the future!\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "objectID": "posts/Python demo/index.html#variables-and-data-types",
+    "href": "posts/Python demo/index.html#variables-and-data-types",
+    "title": "Python Demo",
+    "section": "Variables and data types",
+    "text": "Variables and data types\n```python a = 10 # integer b = 2.5 # float c = True # boolean d —\nThis post demonstrate how python works on quadro."
   }
 ]
