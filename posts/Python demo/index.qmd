@@ -1,28 +1,52 @@
 ---
----
 title: "Python Demo"
 jupyter: python3
 ---
 
+
 This post demonstrates how Python code runs in Quarto.
 
 ```{python}
-import numpy as np
+import pandas as pd
+from palmerpenguins import load_penguins
+
+# Load the dataset as a pandas DataFrame
+penguins = load_penguins()
+
+# Inspect the first few rows
+print(penguins.head())
+```
+
+```{python}
+# Quick summary
+penguins.describe()
+```
+
+Self-defined question 1:
+Group by sex and island, investigate that if the plunguins' body mass are significant different between the male and female.
+```{python}
+df = penguins.groupby(['sex', 'island']).agg({'body_mass_g': 'mean'})
+df
+```
+
+```{python}
 import matplotlib.pyplot as plt
-
-x = np.linspace(0, 10, 100)
-y = np.sin(x)
-
-plt.plot(x, y, color='blue', label='Sin(x)')
-plt.title("Simple Sine Wave")
-plt.xlabel("X")
-plt.ylabel("Y")
-plt.legend()
+ax = df.unstack()['body_mass_g'].plot(kind='bar', figsize=(8, 5))
+plt.title("Mean Body Mass by Sex and Island")
+plt.ylabel("Mean Body Mass (g)")
+plt.xlabel("Sex")
+plt.xticks(rotation=0)
+plt.legend(title="Island")
+plt.tight_layout()
 plt.show()
 ```
----
+
+According to above figure, male penguins are generally having higher body mass. Also penguins on Biscoe island are significantly larger than others.
 
 
 
+
+
+------------------------------------------------------------------------
 
 This post demonstrate how python works on quadro.
