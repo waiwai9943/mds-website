@@ -1,2 +1,2 @@
 # mds-website
-UBC MDS Personal Web
+UBC MDS Personal Web using Quarto 
