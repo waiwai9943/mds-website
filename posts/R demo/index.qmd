@@ -1,15 +1,73 @@
 ---
----
-title: "My Analysis Post"
+title: "R demo"
 date: "2026-09-22"
 output: html_document
 ---
----
 
 ```{r}
+renv::init()
+```
 
+```{r}
 library(tidyverse)
 library(palmerpenguins)
 library(plotly)
-source("path/to/your_script.R")
+renv::snapshot()
+```
+
+```{r}
+# Load the penguins dataset
+data("penguins")
+glimpse(penguins)
+head(penguins)
+```
+
+
+Question 1:
+Investigate if sex and island affect the body mass
+
+```{r}
+##Data wrangling
+df <- penguins |>
+    drop_na() |>
+    group_by(sex,island) |> 
+    summarize(mean_mass = mean(body_mass_g,na.rm = TRUE))
+print(df)
+```
+
+```{r}
+p <- ggplot(df, aes(x = sex , y = mean_mass, fill = island)) +
+    geom_col(position = "dodge", alpha = 0.85) +
+    scale_fill_brewer(palette = "Set2") +
+    labs(
+        title = "Mean Body Mass by Island & Sex",
+        x = "Island",
+        y = "Mean Body Mass (g)",
+        fill = "Sex"
+    ) +
+    theme_minimal()
+
+# Display as an interactive plotly plot
+ggplotly(p)
+```
+
+
+Question 2:
+Is there a relationship between bill length and flipper length?
+
+```{r}
+###Code revised from docs website
+p2 <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+    geom_point(alpha = 0.8, size = 2.5) +
+    geom_smooth(method = "lm", se = FALSE) +
+    scale_color_brewer(palette = "Set1") +
+    labs(
+        title = "Bill Length vs. Flipper Length",
+        x = "Bill Length (mm)",
+        y = "Flipper Length (mm)",
+        color = "Species"
+    ) +
+    theme_minimal()
+ggplotly(p2)
+
 ```

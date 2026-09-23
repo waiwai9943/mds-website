@@ -2,7 +2,7 @@
 title: "Python Demo"
 jupyter: python3
 ---
-
+Data is from: https://github.com/mcnakhaee/palmerpenguins
 
 This post demonstrates how Python code runs in Quarto.
 
