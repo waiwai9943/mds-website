@@ -1,7 +1,9 @@
 ---
 title: "Python Demo"
+date: "2026-09-22"
 jupyter: python3
 ---
+
 Data is from: https://github.com/mcnakhaee/palmerpenguins
 
 This post demonstrates how Python code runs in Quarto.
@@ -22,8 +24,10 @@ print(penguins.head())
 penguins.describe()
 ```
 
+
 Self-defined question 1:
 Group by sex and island, investigate that if the plunguins' body mass are significant different between the male and female.
+
 ```{python}
 df = penguins.groupby(['sex', 'island']).agg({'body_mass_g': 'mean'})
 df
@@ -40,6 +44,7 @@ plt.legend(title="Island")
 plt.tight_layout()
 plt.show()
 ```
+
 
 According to above figure, male penguins are generally having higher body mass. Also penguins on Biscoe island are significantly larger than others.
 

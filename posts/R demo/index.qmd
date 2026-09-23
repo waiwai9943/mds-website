@@ -1,5 +1,6 @@
 ---
 title: "R demo"
+author: "Isaac Wu"
 date: "2026-09-22"
 output: html_document
 ---
@@ -21,6 +22,7 @@ data("penguins")
 glimpse(penguins)
 head(penguins)
 ```
+
 
 
 
@@ -52,6 +54,7 @@ p <- ggplot(df, aes(x = sex , y = mean_mass, fill = island)) +
 # Display as an interactive plotly plot
 ggplotly(p)
 ```
+
 
 
 
