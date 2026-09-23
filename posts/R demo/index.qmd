@@ -27,6 +27,7 @@ head(penguins)
 
 
 
+
 Question 1:
 Investigate if sex and island affect the body mass
 
@@ -54,6 +55,7 @@ p <- ggplot(df, aes(x = sex , y = mean_mass, fill = island)) +
 # Display as an interactive plotly plot
 ggplotly(p)
 ```
+
 
 
 
