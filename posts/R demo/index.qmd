@@ -23,6 +23,8 @@ head(penguins)
 ```
 
 
+
+
 Question 1:
 Investigate if sex and island affect the body mass
 
@@ -52,6 +54,8 @@ ggplotly(p)
 ```
 
 
+
+
 Question 2:
 Is there a relationship between bill length and flipper length?
 
@@ -69,5 +73,4 @@ p2 <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = sp
     ) +
     theme_minimal()
 ggplotly(p2)
-
 ```
