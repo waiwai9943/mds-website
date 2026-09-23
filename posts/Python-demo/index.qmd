@@ -1,10 +1,13 @@
 ---
 title: "Python Demo"
+author: "Isaac Wu"
 date: "2026-09-22"
-jupyter: python3
 ---
 
-Data is from: https://github.com/mcnakhaee/palmerpenguins
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
+
 
 This post demonstrates how Python code runs in Quarto.
 
@@ -23,6 +26,10 @@ print(penguins.head())
 # Quick summary
 penguins.describe()
 ```
+
+
+
+
 
 
 Self-defined question 1:
@@ -46,6 +53,8 @@ plt.show()
 ```
 
 
+
+
 According to above figure, male penguins are generally having higher body mass. Also penguins on Biscoe island are significantly larger than others.
 
 
@@ -54,4 +63,4 @@ According to above figure, male penguins are generally having higher body mass. 
 
 ------------------------------------------------------------------------
 
-This post demonstrate how python works on quadro.
+This post demonstrates how python works on quarto.

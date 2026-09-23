@@ -2,10 +2,9 @@
   {
     "listing": "/blog.html",
     "items": [
-      "/posts/Python demo/index.html",
-      "/posts/R demo/index.html",
-      "/posts/first-weeks/index.html",
-      "/posts/Python and R/index.html"
+      "/posts/Python-demo/index.html",
+      "/posts/R-demo/index.html",
+      "/posts/first-weeks/index.html"
     ]
   }
 ]

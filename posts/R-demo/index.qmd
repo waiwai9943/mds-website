@@ -14,7 +14,7 @@ output: html_document
 library(tidyverse)
 library(palmerpenguins)
 library(plotly)
-renv::snapshot()
+#renv::snapshot()
 ```
 
 ```{r}
@@ -23,6 +23,9 @@ data("penguins")
 glimpse(penguins)
 head(penguins)
 ```
+
+
+
 
 
 
@@ -57,6 +60,9 @@ p <- ggplot(df, aes(x = sex , y = mean_mass, fill = island)) +
 # Display as an interactive plotly plot
 ggplotly(p)
 ```
+
+
+
 
 
 
