@@ -1,0 +1,75 @@
+---
+title: "Python and R"
+author: "Isaac Wu"
+date: 2026-09-22
+---
+
+
+
+This post combines Python and R code demonstrations in Quarto.
+
+Data source: https://github.com/mcnakhaee/palmerpenguins
+
+## Python Section
+
+```{python}
+import pandas as pd
+from palmerpenguins import load_penguins
+import matplotlib.pyplot as plt
+
+penguins = load_penguins()
+penguins.head()
+```
+
+```{python}
+df_py = penguins.groupby(['sex', 'island']).agg({'body_mass_g': 'mean'})
+ax = df_py.unstack()['body_mass_g'].plot(kind='bar', figsize=(8, 5))
+plt.title("Mean Body Mass by Sex and Island (Python)")
+plt.ylabel("Mean Body Mass (g)")
+plt.xlabel("Sex")
+plt.xticks(rotation=0) # Rotate x-axis labels for better readability
+plt.legend(title="Island")
+plt.tight_layout()
+plt.show()
+```
+
+
+
+
+
+
+
+## R Section
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(palmerpenguins)
+library(tidyverse)
+```
+
+```{r}
+data("penguins")
+glimpse(penguins)
+```
+
+```{r}
+df_r <- penguins |>
+    drop_na() |>
+    group_by(sex, island) |>
+    summarize(mean_mass = mean(body_mass_g, na.rm = TRUE))
+```
+
+```{r}
+
+ggplot(df_r, aes(x = sex, y = mean_mass, fill = island)) +
+    geom_col(position = "dodge", alpha = 0.85) +
+    scale_fill_brewer(palette = "Set2") +
+    labs(
+        title = "Mean Body Mass by Island & Sex (R)",
+        x = "Island",
+        y = "Mean Body Mass (g)",
+        fill = "Sex"
+    ) +
+    theme_minimal()
+```

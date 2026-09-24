@@ -5,8 +5,12 @@ date: "2026-09-22"
 output: html_document
 ---
 
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
+
 ```{r}
-#renv::init()
+renv::init()
 # this is for initialization only
 ```
 
@@ -14,7 +18,7 @@ output: html_document
 library(tidyverse)
 library(palmerpenguins)
 library(plotly)
-#renv::snapshot()
+renv::snapshot()
 ```
 
 ```{r}
@@ -32,21 +36,20 @@ head(penguins)
 
 
 
-
 Question 1:
 Investigate if sex and island affect the body mass
 
 ```{r}
-##Data wrangling
+## Data wrangling
 df <- penguins |>
     drop_na() |>
-    group_by(sex,island) |> 
-    summarize(mean_mass = mean(body_mass_g,na.rm = TRUE))
+    group_by(sex, island) |>
+    summarize(mean_mass = mean(body_mass_g, na.rm = TRUE))
 print(df)
 ```
 
 ```{r}
-p <- ggplot(df, aes(x = sex , y = mean_mass, fill = island)) +
+p <- ggplot(df, aes(x = sex, y = mean_mass, fill = island)) +
     geom_col(position = "dodge", alpha = 0.85) +
     scale_fill_brewer(palette = "Set2") +
     labs(
@@ -69,12 +72,11 @@ ggplotly(p)
 
 
 
-
 Question 2:
 Is there a relationship between bill length and flipper length?
 
 ```{r}
-###Code revised from docs website
+### Code revised from docs website
 p2 <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
     geom_point(alpha = 0.8, size = 2.5) +
     geom_smooth(method = "lm", se = FALSE) +
