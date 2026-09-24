@@ -6,6 +6,7 @@ date: 2026-09-22
 
 
 
+
 This post combines Python and R code demonstrations in Quarto.
 
 Data source: https://github.com/mcnakhaee/palmerpenguins
@@ -13,6 +14,8 @@ Data source: https://github.com/mcnakhaee/palmerpenguins
 ## Python Section
 
 ```{python}
+#| message: false
+#| warning: false
 import pandas as pd
 from palmerpenguins import load_penguins
 import matplotlib.pyplot as plt
@@ -22,6 +25,8 @@ penguins.head()
 ```
 
 ```{python}
+#| label: fig-penguin-mass-python-mixed
+#| fig-cap: "Mean Body Mass by Sex and Island (Python)."
 df_py = penguins.groupby(['sex', 'island']).agg({'body_mass_g': 'mean'})
 ax = df_py.unstack()['body_mass_g'].plot(kind='bar', figsize=(8, 5))
 plt.title("Mean Body Mass by Sex and Island (Python)")
@@ -39,9 +44,12 @@ plt.show()
 
 
 
+
 ## R Section
 
 ```{r}
+#| message: false
+#| warning: false
 library(dplyr)
 library(ggplot2)
 library(palmerpenguins)
@@ -61,6 +69,8 @@ df_r <- penguins |>
 ```
 
 ```{r}
+#| label: fig-penguin-mass-r-mixed
+#| fig-cap: "Mean Body Mass by Island & Sex (R)."
 
 ggplot(df_r, aes(x = sex, y = mean_mass, fill = island)) +
     geom_col(position = "dodge", alpha = 0.85) +

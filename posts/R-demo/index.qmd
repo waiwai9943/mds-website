@@ -6,6 +6,7 @@ output: html_document
 ---
 
 
+
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
 Palmer Station Antarctica LTER.
 
@@ -15,6 +16,8 @@ renv::init()
 ```
 
 ```{r}
+#| message: false
+#| warning: false
 library(tidyverse)
 library(palmerpenguins)
 library(plotly)
@@ -27,6 +30,7 @@ data("penguins")
 glimpse(penguins)
 head(penguins)
 ```
+
 
 
 
@@ -49,6 +53,8 @@ print(df)
 ```
 
 ```{r}
+#| label: fig-penguin-mass-r
+#| fig-cap: "Mean Body Mass by Island & Sex (R)."
 p <- ggplot(df, aes(x = sex, y = mean_mass, fill = island)) +
     geom_col(position = "dodge", alpha = 0.85) +
     scale_fill_brewer(palette = "Set2") +
@@ -72,10 +78,13 @@ ggplotly(p)
 
 
 
+
 Question 2:
 Is there a relationship between bill length and flipper length?
 
 ```{r}
+#| label: fig-penguin-flipper-r
+#| fig-cap: "Bill Length vs. Flipper Length (R)."
 ### Code revised from docs website
 p2 <- ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
     geom_point(alpha = 0.8, size = 2.5) +

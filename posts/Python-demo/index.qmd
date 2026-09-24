@@ -5,6 +5,7 @@ date: "2026-09-22"
 ---
 
 
+
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
 Palmer Station Antarctica LTER.
 
@@ -12,6 +13,8 @@ Palmer Station Antarctica LTER.
 This post demonstrates how Python code runs in Quarto.
 
 ```{python}
+#| message: false
+#| warning: false
 import pandas as pd
 from palmerpenguins import load_penguins
 
@@ -32,6 +35,7 @@ penguins.describe()
 
 
 
+
 Self-defined question 1:
 Group by sex and island, investigate that if the plunguins' body mass are significant different between the male and female.
 
@@ -41,6 +45,8 @@ df
 ```
 
 ```{python}
+#| label: fig-penguin-mass
+#| fig-cap: "Mean Body Mass by Sex and Island (Python)."
 import matplotlib.pyplot as plt
 ax = df.unstack()['body_mass_g'].plot(kind='bar', figsize=(8, 5))
 plt.title("Mean Body Mass by Sex and Island")
@@ -51,6 +57,7 @@ plt.legend(title="Island")
 plt.tight_layout()
 plt.show()
 ```
+
 
 
 
