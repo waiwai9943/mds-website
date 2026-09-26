@@ -3,8 +3,8 @@ title: "R demo"
 author: "Isaac Wu"
 date: "2026-09-22"
 output: html_document
+prefer-html: true
 ---
-
 
 
 

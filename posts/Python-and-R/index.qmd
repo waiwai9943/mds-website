@@ -7,6 +7,8 @@ date: 2026-09-22
 
 
 
+
+
 This post combines Python and R code demonstrations in Quarto.
 
 Data source: https://github.com/mcnakhaee/palmerpenguins
@@ -45,7 +47,13 @@ plt.show()
 
 
 
+
+
 ## R Section
+
+#| include: false
+library(reticulate)
+use_virtualenv("./.venv", required = TRUE)
 
 ```{r}
 #| message: false
